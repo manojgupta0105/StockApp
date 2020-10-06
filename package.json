@@ -2,14 +2,19 @@
   "name": "socketApp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
+  "homepage": "https://manojgupta0105.github.io/StockApp",
   "scripts": {
-    "start": "parcel app/index.html --open"
+    "start": "parcel app/index.html --open --out-dir build",
+    "build": "parcel build app/index.html --out-dir build",
+    "predeploy": "npm run build --out-dir build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
